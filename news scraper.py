@@ -4,7 +4,7 @@
 # In[111]:
 
 
-import  requests, os, bs4, openpyxl, sys
+import  requests, os, bs4, openpyxl
 os.chdir('/Users/daniellynch/Downloads/News Bias Files/Right')
 
 url = "https://mediabiasfactcheck.com/right/"
