@@ -3,6 +3,7 @@
 
 # In[111]:
 
+#This is the program designed to scrape the required information from the website
 
 import  requests, os, bs4, openpyxl
 os.chdir('/Users/daniellynch/Downloads/News Bias Files/Right')
@@ -25,6 +26,7 @@ for link in get_links:
             print('Here is a link: ' + link)
             try:
                 Biased = link_soup.find_all('p')
+                #Only selects links in the relevant table
                 title = link_soup.select_one('#mh-mobile > div.container.mh-mobile > div.wrapper.clearfix')
                 organisation = title.find('h1')
                 organisation = organisation.text
@@ -37,6 +39,7 @@ for link in get_links:
                 continue
         for i in Biased:
             if 'Factual Reporting:'  in i.text:
+                #Creates text files to store the data
                 new_file = open((organisation) +'.txt', 'w')
                 new_file.write(organisation)
                 new_file.write('\n' + i.text)
@@ -60,7 +63,8 @@ for foldername, subfolders, filenames in os.walk('/Users/daniellynch/Downloads/N
             f = open(file, 'r')
             read_text = f.readlines()
             file_name_list.append(read_text)
-            
+
+#Sorts the list into alphabetical order for organisational purposes           
 sorted_list = sorted(file_name_list)
 
         
