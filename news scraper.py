@@ -55,11 +55,9 @@ print('Finished')
 # In[112]:
 
 
-file_name_list = []
 for foldername, subfolders, filenames in os.walk('/Users/daniellynch/Downloads/News Bias Files/Right'):
     for file in filenames:
         if file.endswith('.txt'):
-            mini_list = []
             f = open(file, 'r')
             read_text = f.readlines()
             file_name_list.append(read_text)
