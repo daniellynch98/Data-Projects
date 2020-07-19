@@ -54,7 +54,7 @@ print('Finished')
 
 # In[112]:
 
-
+file_name_list = []
 for foldername, subfolders, filenames in os.walk('/Users/daniellynch/Downloads/News Bias Files/Right'):
     for file in filenames:
         if file.endswith('.txt'):
